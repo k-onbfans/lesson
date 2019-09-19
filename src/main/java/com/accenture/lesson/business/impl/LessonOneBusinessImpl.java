@@ -1,14 +1,12 @@
-package com.accenture.lesson.lesson1.business.impl;
+package com.accenture.lesson.business.impl;
 
-import com.accenture.lesson.lesson1.business.LessonOneBusiness;
-import com.accenture.lesson.request.JosephReq;
+import com.accenture.lesson.business.LessonOneBusiness;
 import com.accenture.lesson.response.JosephRes;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 public class LessonOneBusinessImpl implements LessonOneBusiness {
@@ -32,13 +30,13 @@ public class LessonOneBusinessImpl implements LessonOneBusiness {
     }
 
     @Override
-    public JosephRes solveJosephProblem(String[] elements,Integer startIndex,Integer intervel) {
+    public JosephRes solveJosephProblem(String[] elements,Integer startIndex,Integer interval) {
         List<String> list = new ArrayList<String>(elements.length);
         Collections.addAll(list,elements);
         int num = startIndex;
         list.remove(num);
         while(list.size() > 1){
-            num = num + intervel - 1;
+            num = num + interval - 1;
             if(num > list.size()-1){
                 while(num > list.size()-1){
                     num = num - list.size();
@@ -48,6 +46,8 @@ public class LessonOneBusinessImpl implements LessonOneBusiness {
                 list.remove(num);
             }
         }
-        return new JosephRes(list.get(0));
+        JosephRes josephRes = new JosephRes();
+        josephRes.setLastElement(list.get(0));
+        return josephRes;
     }
 }

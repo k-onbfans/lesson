@@ -1,6 +1,6 @@
 package com.accenture.lesson.response;
 
-import lombok.AllArgsConstructor;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,7 +8,9 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-@AllArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class JosephRes {
     private String lastElement;
+    private String result;
+
 }

@@ -1,7 +1,6 @@
-package com.accenture.lesson.lesson1.business;
+package com.accenture.lesson.business;
 
 
-import com.accenture.lesson.request.JosephReq;
 import com.accenture.lesson.response.JosephRes;
 
 public interface LessonOneBusiness {

@@ -1,6 +1,6 @@
 package com.accenture.lesson.business.impl;
 
-import com.accenture.lesson.business.LessonOneBusiness;
+import com.accenture.lesson.business.FbAndJoBusiness;
 import com.accenture.lesson.response.JosephRes;
 import org.springframework.stereotype.Service;
 
@@ -8,13 +8,27 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Fbonacci and Joseph problem businesses' implements
+ * @author yifei.zhu
+ */
 @Service
-public class LessonOneBusinessImpl implements LessonOneBusiness {
+public class FbAndJoBusinessImpl implements FbAndJoBusiness {
 
-
+    /**
+     * show Fibonacci number
+     * @param length how many Fibonacci number
+     * @return A Integer array containing Fibonacci numbers
+     */
     @Override
     public Integer[] showFibonacci(Integer length){
+        /**
+         * the first Fibonacci number
+         */
         Integer first = 0;
+        /**
+         * the second Fibonacci number
+         */
         Integer second = 1;
         Integer[] result= new Integer[length];
         result[0] = first;
@@ -29,6 +43,13 @@ public class LessonOneBusinessImpl implements LessonOneBusiness {
         return result;
     }
 
+    /**
+     * solve Joseph problem
+     * @param elements contaning some members
+     * @param startIndex which to start
+     * @param interval how many to skip
+     * @return the last menber in joseph circle
+     */
     @Override
     public JosephRes solveJosephProblem(String[] elements,Integer startIndex,Integer interval) {
         List<String> list = new ArrayList<String>(elements.length);

@@ -3,7 +3,7 @@ package com.accenture.lesson.business;
 
 import com.accenture.lesson.response.JosephRes;
 
-public interface LessonOneBusiness {
+public interface FbAndJoBusiness {
 
     public Integer[] showFibonacci(Integer length);
 

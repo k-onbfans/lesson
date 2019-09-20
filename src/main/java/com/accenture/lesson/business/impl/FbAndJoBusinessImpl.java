@@ -4,6 +4,7 @@ import com.accenture.lesson.business.FbAndJoBusiness;
 import com.accenture.lesson.response.JosephRes;
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,22 +22,22 @@ public class FbAndJoBusinessImpl implements FbAndJoBusiness {
      * @return A Integer array containing Fibonacci numbers
      */
     @Override
-    public Integer[] showFibonacci(Integer length){
+    public BigInteger[] showFibonacci(Integer length){
         /**
          * the first Fibonacci number
          */
-        Integer first = 0;
+        BigInteger first = BigInteger.valueOf(0);
         /**
          * the second Fibonacci number
          */
-        Integer second = 1;
-        Integer[] result= new Integer[length];
+        BigInteger second = BigInteger.valueOf(1);
+        BigInteger[] result= new BigInteger[length];
         result[0] = first;
         if(length > 1){
             result[1] = second;
             if(length > 2){
                 for(Integer i = 2;i < length;i++){
-                    result[i] = result[i-1] + result[i-2];
+                    result[i] = result[i-1].add(result[i-2]);
                 }
             }
         }
@@ -52,7 +53,7 @@ public class FbAndJoBusinessImpl implements FbAndJoBusiness {
      */
     @Override
     public JosephRes solveJosephProblem(String[] elements,Integer startIndex,Integer interval) {
-        List<String> list = new ArrayList<String>(elements.length);
+        List<String> list = new ArrayList<>(elements.length);
         Collections.addAll(list,elements);
         int num = startIndex;
         list.remove(num);

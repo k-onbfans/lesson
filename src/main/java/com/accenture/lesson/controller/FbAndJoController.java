@@ -7,6 +7,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
@@ -28,7 +29,7 @@ public class FbAndJoController {
     }
 
     @PostMapping("/joseph")
-    public @ResponseBody JosephRes solveJosephProblem(@Valid @RequestBody JosephReq josephReq){
+    public @ResponseBody JosephRes solveJosephProblem(@Validated @RequestBody JosephReq josephReq){
         return fbAndJoBusiness.solveJosephProblem(josephReq.getElements(),
                 josephReq.getStartIndex(),
                 josephReq.getInterval());

@@ -1,13 +1,13 @@
 package com.accenture.lesson.business.impl;
 
 import com.accenture.lesson.business.FbAndJoBusiness;
-import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+
+import java.math.BigInteger;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,15 +21,15 @@ class FbAndJoBusinessImplTest {
     @Test
     void showFibonacci() {
 
-        Integer expected = 0;
-        Integer result = fbAndJoBusiness.showFibonacci(1)[fbAndJoBusiness.showFibonacci(1).length-1];
+        BigInteger expected = BigInteger.valueOf(0);
+        BigInteger result = fbAndJoBusiness.showFibonacci(1)[fbAndJoBusiness.showFibonacci(1).length-1];
         assertEquals(expected,result);
 
-        expected = 3;
+        expected = BigInteger.valueOf(3);
         result = fbAndJoBusiness.showFibonacci(5)[fbAndJoBusiness.showFibonacci(5).length-1];
         assertEquals(expected,result);
 
-        expected = 34;
+        expected = BigInteger.valueOf(34);
         result = fbAndJoBusiness.showFibonacci(10)[fbAndJoBusiness.showFibonacci(10).length-1];
         assertEquals(expected,result);
     }

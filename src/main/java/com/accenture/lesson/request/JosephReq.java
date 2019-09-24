@@ -4,7 +4,6 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.Arrays;
 
-
 public class JosephReq {
 
     @NotNull(message = "elements is empty")

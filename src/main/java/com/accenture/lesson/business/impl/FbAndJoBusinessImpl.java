@@ -54,7 +54,7 @@ public class FbAndJoBusinessImpl implements FbAndJoBusiness {
      */
     @Override
     public JosephRes solveJosephProblem(String[] elements,Integer startIndex,Integer interval) {
-        List<String> list = new LinkedList<>();
+        List<String> list = new ArrayList<>();
         Collections.addAll(list,elements);
         int num = startIndex;
         list.remove(num);
